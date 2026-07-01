@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Запись на собеседование</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="interview-scheduler.css">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><i data-lucide="calendar-check"></i></div>
+        <h1>Запись на собеседование</h1>
+      </div>
+      <div class="pill"><i data-lucide="video"></i> Онлайн, 45 минут</div>
+    </header>
+
+    <section class="welcome" aria-label="Приветствие кандидата">
+      <h2>Анастасия, пожалуйста, выберите удобное для вас время интервью 📆</h2>
+    </section>
+
+    <section class="layout" aria-label="Форма записи на собеседование">
+      <div class="scheduler">
+        <div class="step-row" aria-label="Этапы записи">
+          <div class="step active" id="stepDate"><span>1</span>День</div>
+          <div class="step" id="stepTime"><span>2</span>Время</div>
+          <div class="step" id="stepConfirm"><span>3</span>Подтверждение</div>
+        </div>
+
+        <div class="main-grid">
+          <section>
+            <div class="section-head">
+              <h2>Ближайшие дни</h2>
+              <p id="rangeLabel">сегодня и следующие дни</p>
+            </div>
+            <div class="day-grid" id="dayGrid" aria-label="Доступные дни"></div>
+          </section>
+
+          <section class="slot-panel">
+            <div class="section-head">
+              <h2>Доступное время</h2>
+            </div>
+            <div class="slot-list" id="slotList"></div>
+          </section>
+        </div>
+
+        <section class="confirmation" id="confirmationSection" aria-label="Подтверждение записи">
+          <div class="selected-card">
+            <div class="selected-info">
+              <span class="selected-icon" aria-hidden="true"><i data-lucide="badge-check"></i></span>
+              <div>
+                <strong id="selectedText">Выберите день и время</strong>
+              </div>
+            </div>
+            <button class="primary" id="confirmBtn" type="button">
+              <i data-lucide="check"></i>
+              Подтвердить запись
+            </button>
+          </div>
+          <div class="success" id="successMessage" role="status">
+            <span class="status-icon" aria-hidden="true"><i data-lucide="check-circle-2"></i></span>
+            <span id="successText"></span>
+          </div>
+        </section>
+      </div>
+
+      <aside class="aside" aria-label="Детали встречи">
+        <h2>Детали встречи</h2>
+        <div class="summary">
+          <div class="summary-item">
+            <span class="card-icon" aria-hidden="true"><i data-lucide="calendar-days"></i></span>
+            <div>
+              <strong id="summaryDate">День пока не выбран</strong>
+            </div>
+          </div>
+          <div class="summary-item">
+            <span class="card-icon" aria-hidden="true"><i data-lucide="clock-3"></i></span>
+            <div>
+              <strong id="summaryTime">Время пока не выбрано</strong>
+              <p>Длительность интервью: 45 минут.</p>
+            </div>
+          </div>
+          <div class="summary-item">
+            <span class="card-icon" aria-hidden="true"><i data-lucide="video"></i></span>
+            <div>
+              <strong>Формат</strong>
+              <p>Видеоинтервью. На встрече необходимо присутствовать с включенной камерой.</p>
+            </div>
+          </div>
+          <div class="summary-item">
+            <span class="card-icon" aria-hidden="true"><i data-lucide="bell-ring"></i></span>
+            <div>
+              <strong>Напоминание</strong>
+              <p>В день встречи вам придет автоматическое напоминание. Пожалуйста, подтвердите свое присутствие написав в чат: "Все в силе".</p>
+            </div>
+          </div>
+          <div class="summary-item">
+            <span class="card-icon" aria-hidden="true"><i data-lucide="message-square-text"></i></span>
+            <div>
+              <strong>Ссылка на встречу</strong>
+              <p>Рекрутер направит вам ссылку на встречу в чате.</p>
+            </div>
+          </div>
+        </div>
+        <div class="note">
+          <span class="card-icon" aria-hidden="true"><i data-lucide="info"></i></span>
+          <span>В боевой версии доступные слоты будут приходить из календаря рекрутера автоматически.</span>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="interview-scheduler.js"></script>
+</body>
+</html>
+
